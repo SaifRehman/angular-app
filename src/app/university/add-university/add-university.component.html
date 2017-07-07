@@ -1,0 +1,91 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <!--<div class="row">-->
+    <!--<div class="col-md-6">-->
+    <div class="card">
+      <div class="card-header card-header-icon" data-background-color="">
+        <i class="material-icons">group_add</i>
+      </div>
+      <div class="card-content">
+        <h4 class="card-title">University Form</h4>
+        <form (ngSubmit)="addUniversity()">
+
+          <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">add_a_photo</i>
+                                </span>
+            <div class="fileinput fileinput-new text-center" data-provides="fileinput">
+              <div class="fileinput-new thumbnail img-circle">
+                <img src="/src/assets/img/apple-icon.png" alt="...">
+              </div>
+              <div class="fileinput-preview fileinput-exists thumbnail img-circle"></div>
+              <div>
+                                        <span class="btn btn-round btn-file">
+                                            <span class="fileinput-new">Add Logo</span>
+                                            <span class="fileinput-exists">Change</span>
+                                            <input type="file" name="..."/>
+                                        </span>
+                <br/>
+                <a href="#pablo" class="btn btn-danger btn-round fileinput-exists"
+                   data-dismiss="fileinput"><i class="fa fa-times"></i> Remove</a>
+              </div>
+            </div>
+          </div>
+
+          <div *ngIf="false" class="input-group">
+                            <span class="input-group-addon">
+                                <i class="material-icons">label_outline</i>
+                            </span>
+            <div class="form-group">
+              <label class="control-label">University ID</label>
+              <input [(ngModel)]="university.id" type="text" class="form-control"
+                     name="universityid">
+            </div>
+          </div>
+
+          <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="material-icons">label_outline</i>
+                            </span>
+            <div class="form-group">
+              <label class="control-label">University ID</label>
+              <input [(ngModel)]="university.ajyalId" type="text" class="form-control"
+                     name="univeristyajyalid">
+            </div>
+          </div>
+
+          <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="material-icons">location_city</i>
+                            </span>
+            <div class="form-group">
+              <label class="control-label">University Name</label>
+              <input [(ngModel)]="university.name" type="text" class="form-control"
+                     name="universityname">
+            </div>
+          </div>
+
+          <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="material-icons">language</i>
+                            </span>
+            <div class="form-group">
+              <label class="control-label">Country</label>
+              <textarea rows="7" [(ngModel)]="university.country" type="text" class="form-control"
+                        name="country"></textarea>
+            </div>
+          </div>
+
+          <!--<div class="checkbox">-->
+          <!--<label>-->
+          <!--<input type="checkbox" name="optionsCheckboxes"> Subscribe to newsletter-->
+          <!--</label>-->
+          <!--</div>-->
+          <button type="submit" class="btn btn-fill">Submit</button>
+        </form>
+      </div>
+    </div>
+    <!--</div>-->
+    <!--</div>-->
+  </div>
+</div>

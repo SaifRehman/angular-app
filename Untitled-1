@@ -1,0 +1,86 @@
+import { Component, OnInit } from '@angular/core';
+import { GroupService } from '../group.service';
+import { Group } from '../group';
+import * as Chartist from 'chartist';
+import { NvD3Component } from 'ng2-nvd3';
+declare let d3: any;
+import { Injectable } from '@angular/core';
+import { Http, Response, Headers, RequestOptions } from '@angular/http';
+import { Observable } from 'rxjs/Rx';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+import { TableData } from '../../md/md-table/md-table.component';
+
+@Component({
+  selector: 'app-list-groups',
+  templateUrl: './reporting-group.component.html',
+  styleUrls: ['./reporting-group.component.css']
+})
+export class ReportingGroupComponent implements OnInit {
+
+  public totalGroups: number;
+  type: any;
+  data1: any;
+  options1: any;
+  public show: any;
+  public performance: any;
+  public performanceOutsideUAE: any;
+  constructor(private http: Http, private groupService: GroupService) {
+    this.show = [];
+    this.performanceOutsideUAE = [];
+    this.performance = [];
+    this.totalGroups = 0;
+  }
+  public getJSON(): Observable<any> {
+    return this.http.get("./cards.json")
+      .map((res: any) => res.json())
+  }
+  public getJSONPerformance(): Observable<any> {
+    return this.http.get("./performance.json")
+      .map((res: any) => res.json())
+  }
+  public getJSONPerformanceOutsideUAE(): Observable<any> {
+    return this.http.get("./performanceOutsideUAE.json")
+      .map((res: any) => res.json())
+  }
+  open(a, b) {
+  }
+
+  ngOnInit() {
+
+    this.getJSON().subscribe(data => {
+
+      this.show = data;
+    });
+    this.getJSONPerformance().subscribe(data => {
+      this.performance = data[0]["values"];
+      var data2=[];
+      var data3=[];
+      this.performance.forEach(function(obj) { 
+         data2.push(obj["label"]);
+         data3.push(obj["value"]);
+       });
+                console.log(data2)
+                console.log(data3);
+
+
+      this.type = 'bar';
+      this.data1 = {
+        labels: ["a","s"],
+        datasets: [
+          {
+            label: "My First dataset",
+            data: [1,2]
+          }
+        ]
+      };
+      this.options1 = {
+        responsive: true,
+        maintainAspectRatio: false
+      };
+    });
+    this.getJSONPerformanceOutsideUAE().subscribe(data => {
+      this.performanceOutsideUAE = data;
+    });
+  }
+}

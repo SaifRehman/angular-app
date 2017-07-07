@@ -1,0 +1,89 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <ul class="timeline timeline-simple">
+            <li class="timeline-inverted">
+                <div class="timeline-badge info">
+                    <i class="material-icons">group</i>
+                </div>
+                <div class="timeline-panel">
+                    <div class="timeline-heading">
+                        <span class="label label-info">General</span>
+                    </div>
+                    <div class="timeline-body">
+                        <div class="col-s-1 pull-right">
+                            <img src="/src/assets/img/ajyal-logo.png">
+                        </div>
+                        <h3>Group ID:</h3> <h4>{{group.ajyalId}}</h4>
+                        <h3>Name:</h3> <h4>{{group.name}}</h4>
+                        <h3>Description:</h3> <h4>{{group.description}}</h4>
+                    </div>
+                </div>
+            </li>
+            <li class="timeline-inverted">
+                <div class="timeline-badge info">
+                    <i class="material-icons">face</i>
+                </div>
+                <div class="timeline-panel">
+                    <div class="timeline-heading">
+                        <span class="label label-info">Advisor</span>
+                    </div>
+                    <div class="timeline-body">
+                        <div *ngIf="group.advisor !== null">
+                            <h3>Advisor ID: </h3>
+                            <h4>{{group.advisor.ajyalId}}</h4>
+                            <h3>Name:</h3>
+                            <h4>{{group.advisor.firstName}}
+                            {{this.group.advisor.lastName}}</h4>
+                        </div>
+                        <div *ngIf="group.advisor === null">
+                            <h3>This group doesn't have an advisor yet.</h3>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="timeline-inverted">
+                <div class="timeline-badge info">
+                    <i class="material-icons">fingerprint</i>
+                </div>
+                <div class="timeline-panel">
+                    <div class="timeline-heading">
+                        <span class="label label-info">Students</span>
+                    </div>
+                    <div class="timeline-body">
+                        <table *ngIf="group.students !== null &&
+                                        group.students.length !== 0"
+                               id="students-table"
+                               class="table table-striped table-no-bordered table-hover"
+                               cellspacing="0"
+                               width="100%" style="width:100%">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>University</th>
+                                <th>Major</th>
+                                <th>Academic Standing</th>
+                                <th>CGPA</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr *ngFor="let student of group.students">
+                                <td>{{student.ajyalId}}</td>
+                                <td>{{student.firstName}} {{student.lastName}}</td>
+                                <td>{{student.program.department.college.university.name}}</td>
+                                <td>{{student.program.name}}</td>
+                                <td>{{student.studentAcademics.academicStatus}}</td>
+                                <td>{{student.studentAcademics.cumulativeGPA}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <div *ngIf="this.group.students === null ||
+                                    this.group.students.length === 0">
+                            <h3>This group does not have students yet.</h3>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

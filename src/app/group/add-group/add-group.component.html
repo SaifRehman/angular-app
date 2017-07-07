@@ -1,0 +1,78 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header card-header-icon" data-background-color="">
+                <i class="material-icons">group_add</i>
+            </div>
+            <div class="card-content">
+                <h4 class="card-title">Group Form</h4>
+                <form (ngSubmit)="addGroup()">
+
+                    <!--<div class="input-group">-->
+                                <!--<span class="input-group-addon">-->
+                                    <!--<i class="material-icons">add_a_photo</i>-->
+                                <!--</span>-->
+                        <!--<div class="fileinput fileinput-new text-center" data-provides="fileinput">-->
+                            <!--<div class="fileinput-new thumbnail img-circle">-->
+                                <!--<img src="/src/assets/img/apple-icon.png" alt="...">-->
+                            <!--</div>-->
+                            <!--<div class="fileinput-preview fileinput-exists thumbnail img-circle"></div>-->
+                            <!--<div>-->
+                                        <!--<span class="btn btn-round btn-file">-->
+                                            <!--<span class="fileinput-new">Add Logo</span>-->
+                                            <!--<span class="fileinput-exists">Change</span>-->
+                                            <!--<input type="file"/>-->
+                                        <!--</span>-->
+                                <!--<br/>-->
+                                <!--<a href="#pablo" class="btn btn-danger btn-round fileinput-exists"-->
+                                   <!--data-dismiss="fileinput"><i class="fa fa-times"></i> Remove</a>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+
+                    <div *ngIf="false" class="input-group">
+                            <span class="input-group-addon">
+                                <i class="material-icons">label_outline</i>
+                            </span>
+                        <div class="form-group">
+                            <label class="control-label">Group Database ID</label>
+                            <input name="group.id" [(ngModel)]="group.id" type="text" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="material-icons">label_outline</i>
+                            </span>
+                        <div class="form-group">
+                            <label class="control-label">Group ID</label>
+                            <input name="group.ajyalId" [(ngModel)]="group.ajyalId" type="text" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="material-icons">group</i>
+                            </span>
+                        <div class="form-group">
+                            <label class="control-label">Group Name</label>
+                            <input name="group.name" [(ngModel)]="group.name" type="text" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="material-icons">description</i>
+                            </span>
+                        <div class="form-group">
+                            <label class="control-label">Description</label>
+                            <textarea name="group.description" rows="7" [(ngModel)]="group.description" type="text"
+                                      class="form-control"></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-fill">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

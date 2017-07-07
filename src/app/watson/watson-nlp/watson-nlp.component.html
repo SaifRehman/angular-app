@@ -1,0 +1,44 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header card-header-icon" data-background-color="rose">
+                        <i class="material-icons">mail_outline</i>
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title">Watson NLP</h4>
+                        <div class="form-group label-floating">
+                            <label class="control-label">Sentance</label>
+                            <input type="text" class="form-control" [(ngModel)]="sentance">
+                        </div>
+                        <button type="submit" class="btn btn-fill btn-rose" (click)="callWatsonNlpApi()">Submit</button>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-header" data-background-color="orange">
+                        <i class="material-icons">weekend</i>
+                    </div>
+                    <div class="card-content">
+                        <p class="category">Sentiment</p>
+                        <h3 class="card-title">{{show}}</h3>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons text-danger">warning</i>
+                            <a href="#pablo">Your Sentiment</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+    </div>

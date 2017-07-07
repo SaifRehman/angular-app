@@ -1,0 +1,24 @@
+{
+  "values":[
+          {
+            "label" : "below 2.0" ,
+            "value" : 3
+          } ,
+          {
+            "label" : "2.0-2.49" ,
+            "value" : 8
+          } ,
+          {
+            "label" : "2.5-2.99" ,
+            "value" : 15
+          } ,
+          {
+            "label" : "3.0 and above" ,
+            "value" : 40
+          } ,
+          {
+            "label" : "N/A" ,
+            "value" : 3
+          }
+  ]
+}

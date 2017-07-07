@@ -1,0 +1,141 @@
+<div class="logo">
+    <div class="logo-normal">
+        <a href="http://localhost:4200" class="simple-text">
+            Ajyal LMS
+        </a>
+    </div>
+    <!--<div class="center-block">-->
+    <!--<a href="http://localhost:4200"><img style="width: 95%; height: 95%;" src="/src/assets/img/ajyal-logo.png"/></a>-->
+    <!--</div>-->
+</div>
+
+
+<div class="sidebar-wrapper">
+
+    <div class="user">
+        <div class="photo">
+            <img src="/src/assets/img/faces/avatar.jpg" />
+        </div>
+        <div class="info">
+            <a data-toggle="collapse" href="#collapseExample" class="collapsed">
+                        <span>
+                            Tania Andrew
+                            <b class="caret"></b>
+                        </span>
+            </a>
+            <div class="collapse" id="collapseExample">
+                <ul class="nav">
+                    <li>
+                        <a href="javascript:void(0)">
+                            <span class="sidebar-mini">MP</span>
+                            <span class="sidebar-normal">My Profile</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <span class="sidebar-mini">EP</span>
+                            <span class="sidebar-normal">Edit Profile</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <span class="sidebar-mini">S</span>
+                            <span class="sidebar-normal">Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!--<div *ngIf="isNotMobileMenu()">-->
+    <!--<form class="navbar-form navbar-right" role="search">-->
+    <!--<div class="form-group form-search is-empty">-->
+    <!--<input class="form-control" placeholder="Search" type="text">-->
+    <!--<span class="material-input"></span>-->
+    <!--<span class="material-input"></span>-->
+    <!--</div>-->
+    <!--<button class="btn btn-white btn-round btn-just-icon" type="submit">-->
+    <!--<i class="material-icons">search</i>-->
+    <!--<div class="ripple-container"></div>-->
+    <!--</button>-->
+    <!--</form>-->
+    <!--<ul class="nav nav-mobile-menu">-->
+    <!--<li class="">-->
+    <!--<a class="dropdown-toggle" data-toggle="dropdown" href="#pablo" aria-expanded="false">-->
+    <!--<i class="material-icons">dashboard</i>-->
+    <!--<p class="hidden-lg hidden-md">Dashboard</p>-->
+    <!--<div class="ripple-container"></div>-->
+    <!--</a>-->
+    <!--</li>-->
+    <!--<li class="dropdown">-->
+    <!--<a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">-->
+    <!--<i class="material-icons">notifications</i>-->
+    <!--<span class="notification">5</span>-->
+    <!--<p class="hidden-lg hidden-md">-->
+    <!--Notifications-->
+    <!--<b class="caret"></b>-->
+    <!--</p>-->
+    <!--<div class="ripple-container"></div>-->
+    <!--</a>-->
+    <!--<ul class="dropdown-menu">-->
+    <!--<li>-->
+    <!--<a href="#">Mike John responded to your email</a>-->
+    <!--</li>-->
+    <!--<li>-->
+    <!--<a href="#">You have 5 new tasks</a>-->
+    <!--</li>-->
+    <!--<li>-->
+    <!--<a href="#">You're now friend with Andrew</a>-->
+    <!--</li>-->
+    <!--<li>-->
+    <!--<a href="#">Another Notification</a>-->
+    <!--</li>-->
+    <!--<li>-->
+    <!--<a href="#">Another One</a>-->
+    <!--</li>-->
+    <!--</ul>-->
+    <!--</li>-->
+    <!--<li class="">-->
+    <!--<a class="dropdown-toggle" data-toggle="dropdown" href="#pablo" aria-expanded="false">-->
+    <!--<i class="material-icons">person</i>-->
+    <!--<p class="hidden-lg hidden-md">Profile</p>-->
+    <!--<div class="ripple-container"></div>-->
+    <!--</a>-->
+    <!--</li>-->
+    <!--<li class="separator hidden-lg hidden-md"></li>-->
+    <!--</ul>-->
+    <!--</div>-->
+
+    <div class="nav-container">
+        <ul class="nav">
+            <li routerLinkActive="active">
+                <a data-toggle="collapse" href="#watsonMenu">
+                    <i class="material-icons">apps</i>
+                    <p> Watson
+                        <b class="caret"></b>
+                    </p>
+                </a>
+                <div class="collapse" id="watsonMenu">
+                    <ul class="nav">
+                        <li routerLinkActive="active">
+                            <a [routerLink]="[menuItems[0].path]">
+
+                                <span class="sidebar-mini">NL</span>
+                                <span class="sidebar-normal">{{menuItems[0].title}}</span>
+                            </a>
+                        </li>
+                        <li routerLinkActive="active">
+                            <a [routerLink]="[menuItems[1].path]">
+                                <span class="sidebar-mini">VS</span>
+                                <span class="sidebar-normal">{{menuItems[1].title}}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</div>
+

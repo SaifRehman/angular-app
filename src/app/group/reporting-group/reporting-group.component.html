@@ -1,0 +1,497 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-header" data-background-color="grey">
+                        <i class="material-icons">group</i>
+                    </div>
+                    <div class="card-content">
+                        <p class="category">Total Students</p>
+                        <h3 class="card-title">{{show.TotalUndergrad}}</h3>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <a>Total Student in Tamayouz</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-header" data-background-color="grey">
+                        <i class="material-icons">face</i>
+                    </div>
+                    <div class="card-content">
+                        <p class="category">Students in UAE</p>
+                        <h3 class="card-title">{{show.TotalUndergradInUae}}</h3>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <a>Total Students in UAE</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-header" data-background-color="grey">
+                        <i class="material-icons">face</i>
+                    </div>
+                    <div class="card-content">
+                        <p class="category">Students outside UAE</p>
+                        <h3 class="card-title">{{show.TotalUndergradoutsideUae}}</h3>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <a>Total Students outside UAE</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-header" data-background-color="grey">
+                        <i class="material-icons">sort</i>
+                    </div>
+                    <div class="card-content">
+                        <p class="category">Groups</p>
+                        <h3 class="card-title">{{show.NumberOfGroups}}</h3>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <a>Total Number of Groups </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-header" data-background-color="grey">
+                        <i class="material-icons">person</i>
+                    </div>
+                    <div class="card-content">
+                        <p class="category">Advisors</p>
+                        <h3 class="card-title">{{show.NumberOfAdvisors}}</h3>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <a>Total Number of Advisors </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-header" data-background-color="grey">
+                        <i class="material-icons">assessment</i>
+                    </div>
+                    <div class="card-content">
+                        <p class="category">CGPA in UAE</p>
+                        <h3 class="card-title">{{show.AverageCgpaInUae}}</h3>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <a>Average CGPA in UAE</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-header" data-background-color="grey">
+                        <i class="material-icons">assessment</i>
+                    </div>
+                    <div class="card-content">
+                        <p class="category">CGPA outside UAE</p>
+                        <h3 class="card-title">{{show.AverageCgpaOutsideUae}}</h3>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <a>Average CGPA outside UAE</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-header" data-background-color="grey">
+                        <i class="material-icons">home</i>
+                    </div>
+                    <div class="card-content">
+                        <p class="category">Total Universities</p>
+                        <h3 class="card-title">{{show.NumberOfTotalUni}}</h3>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <a>Number of Total Universities</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-md-6" *ngIf="isDataAvailableForUAE">
+                <div class="card">
+                    <div class="card-header card-header-icon" data-background-color="rose">
+                        <i class="material-icons">insert_chart</i>
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title">Academic Performance
+                            <small>- UAE</small>
+                        </h4>
+                    </div>
+                    <div>
+                        <chart [type]="type" [data]="data1" [options]="options1"></chart>
+                    </div>
+
+
+                </div>
+                <button (click)="showtable()" style="font-size: 16px; margin-top: -10px" class="btn btn-rose btn-xs cont"><i class="material-icons">search</i>  Advanced Details</button>
+                <!--<div class="btn-group cont">
+                    <button type="button" class="btn  btn-info">Below 2.0</button>
+                    <button type="button" class="btn  btn-info">2.0-2.49</button>
+                    <button type="button" class="btn  btn-info">3.0 and above</button>
+                    <button type="button" class="btn  btn-info">N/A</button>
+                </div>-->
+
+
+                <div class="card" *ngIf="showTable">
+                    <div class="card-header card-header-icon" data-background-color="rose">
+                        <i class="material-icons">assignment</i>
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title">Below 2.0</h4>
+                        <div class="content table-responsive">
+                            <table class="table">
+                                <thead class="text-primary">
+                                    <tr>
+                                        <th *ngFor="let cell of tableData1.headerRow">{{ cell }}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let row of tableData1.dataRows">
+                                        <td>{{row[0]}}</td>
+                                        <td>{{row[1]}}</td>
+                                        <td>{{row[2]}}</td>
+                                        <td class="text-primary">{{row[3]}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header card-header-icon" data-background-color="rose">
+                        <i class="material-icons">insert_chart</i>
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title">Academic Performance
+                            <small>- Outside UAE</small>
+                        </h4>
+                    </div>
+                    <div>
+                        <chart [type]="type" [data]="data2" [options]="options1"></chart>
+                    </div>
+                </div>
+                <button style="font-size: 16px; margin-top: -10px" class="btn btn-rose btn-xs cont"><i class="material-icons">search</i>  Advanced Details</button>
+                <!--<div class="btn-group">
+                    <button type="button" class="btn btn-info">Below 2.0</button>
+                    <button type="button" class="btn  btn-info">2.0-2.49</button>
+                    <button type="button" class="btn  btn-info">3.0 and above</button>
+                    <button type="button" class="btn  btn-info">N/A</button>
+                </div>-->
+            </div>
+
+
+
+
+            <!--
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-header" data-background-color="green">
+                        <i class="material-icons">store</i>
+                    </div>
+                    <div class="card-content">
+                        <p class="category">Revenue</p>
+                        <h3 class="card-title">$3,245</h3>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">date_range</i> Last 24 Hours
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="card card-stats">
+                    <div class="card-header" data-background-color="blue">
+                        <i class="fa fa-twitter"></i>
+                    </div>
+                    <div class="card-content">
+                        <p class="category">Followers</p>
+                        <h3 class="card-title">+245</h3>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">update</i> Just Updated
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+
+            <!--<div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="card card-product">
+                    <div class="card-image" data-header-animation="true">
+                        <a href="#pablo">
+                            <img class="img" src="../assets/img/card-2.jpeg">
+                        </a>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-actions">
+                            <button type="button" class="btn btn-danger btn-simple fix-broken-card">
+                                <i class="material-icons">build</i> Fix Header!
+                            </button>
+                            <button type="button" class="btn btn-default btn-simple" rel="tooltip" data-placement="bottom" title="View">
+                                <i class="material-icons">art_track</i>
+                            </button>
+                            <button type="button" class="btn btn-success btn-simple" rel="tooltip" data-placement="bottom" title="Edit">
+                                <i class="material-icons">edit</i>
+                            </button>
+                            <button type="button" class="btn btn-danger btn-simple" rel="tooltip" data-placement="bottom" title="Remove">
+                                <i class="material-icons">close</i>
+                            </button>
+                        </div>
+                        <h4 class="card-title">
+                            <a href="#pablo">Cozy 5 Stars Apartment</a>
+                        </h4>
+                        <div class="card-description">
+                            The place is close to Barceloneta Beach and bus stop just 2 min by walk and...
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="price">
+                            <h4>$899/night</h4>
+                        </div>
+                        <div class="stats pull-right">
+                            <p class="category"><i class="material-icons">place</i> Barcelona, Spain</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card card-product">
+                    <div class="card-image" data-header-animation="true">
+                        <a href="#pablo">
+                            <img class="img" src="../assets/img/card-3.jpeg">
+                        </a>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-actions">
+                            <button type="button" class="btn btn-danger btn-simple fix-broken-card">
+                                <i class="material-icons">build</i> Fix Header!
+                            </button>
+                            <button type="button" class="btn btn-default btn-simple" rel="tooltip" data-placement="bottom" title="View">
+                                <i class="material-icons">art_track</i>
+                            </button>
+                            <button type="button" class="btn btn-success btn-simple" rel="tooltip" data-placement="bottom" title="Edit">
+                                <i class="material-icons">edit</i>
+                            </button>
+                            <button type="button" class="btn btn-danger btn-simple" rel="tooltip" data-placement="bottom" title="Remove">
+                                <i class="material-icons">close</i>
+                            </button>
+                        </div>
+                        <h4 class="card-title">
+                            <a href="#pablo">Office Studio</a>
+                        </h4>
+                        <div class="card-description">
+                            The place is close to Metro Station and bus stop just 2 min by walk and near...
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="price">
+                            <h4>$1.119/night</h4>
+                        </div>
+                        <div class="stats pull-right">
+                            <p class="category"><i class="material-icons">place</i> London, UK</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card card-product">
+                    <div class="card-image" data-header-animation="true">
+                        <a href="#pablo">
+                            <img class="img" src="../assets/img/card-1.jpeg">
+                        </a>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-actions">
+                            <button type="button" class="btn btn-danger btn-simple fix-broken-card">
+                                <i class="material-icons">build</i> Fix Header!
+                            </button>
+                            <button type="button" class="btn btn-default btn-simple" rel="tooltip" data-placement="bottom" title="View">
+                                <i class="material-icons">art_track</i>
+                            </button>
+                            <button type="button" class="btn btn-success btn-simple" rel="tooltip" data-placement="bottom" title="Edit">
+                                <i class="material-icons">edit</i>
+                            </button>
+                            <button type="button" class="btn btn-danger btn-simple" rel="tooltip" data-placement="bottom" title="Remove">
+                                <i class="material-icons">close</i>
+                            </button>
+                        </div>
+                        <h4 class="card-title">
+                            <a href="#pablo">Beautiful Castle</a>
+                        </h4>
+                        <div class="card-description">
+                            The place is close to Metro Station and bus stop just 2 min by walk and near...
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="price">
+                            <h4>$459/night</h4>
+                        </div>
+                        <div class="stats pull-right">
+                            <p class="category"><i class="material-icons">place</i> Milan, Italy</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+
+
+            <!--<div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-icon" data-background-color="red">
+                        <i class="material-icons">language</i>
+                    </div>
+                    <div class="card-content">
+                        <h4 class="card-title">Global Sales by Top Locations</h4>
+                        <div class="row">
+                            <div class="col-md-5">
+                                <md-table
+                                  [data]="tableData">
+                              </md-table>
+                            </div>
+                            <div class="col-md-6 col-md-offset-1">
+                                <div id="worldMap" class="map"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card card-chart">
+                    <div class="card-header" data-background-color="green" data-header-animation="true">
+                        <div class="ct-chart" id="dailySalesChart"></div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-actions">
+                            <button type="button" class="btn btn-danger btn-simple fix-broken-card">
+                                <i class="material-icons">build</i> Fix Header!
+                            </button>
+                            <button type="button" class="btn btn-info btn-simple" rel="tooltip" data-placement="bottom" title="Refresh">
+                                <i class="material-icons">refresh</i>
+                            </button>
+                            <button type="button" class="btn btn-default btn-simple" rel="tooltip" data-placement="bottom" title="Change Date">
+                                <i class="material-icons">edit</i>
+                            </button>
+                        </div>
+                        <h4 class="card-title">Daily Sales</h4>
+                        <p class="category">
+                            <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> increase in today sales.</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">access_time</i> updated 4 minutes ago
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-chart">
+                    <div class="card-header" data-background-color="orange" data-header-animation="true">
+                        <div class="ct-chart" id="completedTasksChart"></div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-actions">
+                            <button type="button" class="btn btn-danger btn-simple fix-broken-card">
+                                <i class="material-icons">build</i> Fix Header!
+                            </button>
+                            <button type="button" class="btn btn-info btn-simple" rel="tooltip" data-placement="bottom" title="Refresh">
+                                <i class="material-icons">refresh</i>
+                            </button>
+                            <button type="button" class="btn btn-default btn-simple" rel="tooltip" data-placement="bottom" title="Change Date">
+                                <i class="material-icons">edit</i>
+                            </button>
+                        </div>
+                        <h4 class="card-title">Completed Tasks</h4>
+                        <p class="category">Last Campaign Performance</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">access_time</i> campaign sent 2 days ago
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-chart">
+                    <div class="card-header" data-background-color="red" data-header-animation="true">
+                        <div class="ct-chart" id="websiteViewsChart"></div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-actions">
+                            <button type="button" class="btn btn-danger btn-simple fix-broken-card">
+                                <i class="material-icons">build</i> Fix Header!
+                            </button>
+                            <button type="button" class="btn btn-info btn-simple" rel="tooltip" data-placement="bottom" title="Refresh">
+                                <i class="material-icons">refresh</i>
+                            </button>
+                            <button type="button" class="btn btn-default btn-simple" rel="tooltip" data-placement="bottom" title="Change Date">
+                                <i class="material-icons">edit</i>
+                            </button>
+                        </div>
+                        <h4 class="card-title">Website Views</h4>
+                        <p class="category">Last Campaign Performance</p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">access_time</i> campaign sent 2 days ago
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+        </div>
+    </div>
+</div>
+
+<style>
+    .cont {
+        width: 100%;
+        line-height: 30px;
+        display: table;
+    }
+</style>
