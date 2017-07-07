@@ -28,7 +28,7 @@ export class WatsonNLPComponent implements OnInit {
         var body = {"data":this.sentance};
         var headers = new Headers();
         headers.append('Content-Type', 'application/json');
-        headers.append('Authorization', 'JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFueXRoaW5nIiwidXNlcl9pZCI6MywiZW1haWwiOiJhbnl0aGluZ0BnbWFpbC5jb20iLCJleHAiOjE1MjQ2OTY1MDh9.a2f0rbjC9bac2XdIZ--LnOls8hh7OsNNm0snjrBJw1U');
+        headers.append('Authorization', 'JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFyZWVqMTIzIiwidXNlcl9pZCI6MywiZW1haWwiOiJhcmVlakBjb20iLCJleHAiOjE1MjUzNjc3NTl9.JDuQ-zZid5FzDW4_Z2liv2JUhvocK0UDwBlNVae2z94');
         this.http
             .post('http://127.0.0.1:8000/api/watson/',
             body, {

@@ -14,7 +14,7 @@ import 'rxjs/add/operator/catch';
     styleUrls: ['./watson-vision.component.css']
 })
 export class WatsonVisionComponent implements OnInit {
-
+link:string="";
     constructor(private http: Http, private watsonService: WatsonService) {
         
     }
@@ -22,4 +22,25 @@ export class WatsonVisionComponent implements OnInit {
     ngOnInit() {
 
     }
+ callWatsonVisionApi() {
+        var body = {"link":this.link};
+        console.log(this.link);
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Authorization', 'JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFyZWVqMTIzIiwidXNlcl9pZCI6MywiZW1haWwiOiJhcmVlakBjb20iLCJleHAiOjE1MjUzNjc3NTl9.JDuQ-zZid5FzDW4_Z2liv2JUhvocK0UDwBlNVae2z94');
+        this.http
+            .post('http://127.0.0.1:8000/api/watsonV/',
+            body, {
+                headers: headers
+            })
+            .subscribe(data => {
+                console.log(data.json());
+            }, error => {
+                console.log(JSON.stringify(error.json()));
+                alert("not ok")
+            });
+ } 
+
 }
+
+

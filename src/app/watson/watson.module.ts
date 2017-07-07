@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {WatsonNLPComponent} from './watson-nlp/watson-nlp.component';
 import {WatsonVisionComponent} from './watson-vision/watson-vision.component';
+import {WatsonSpeechToTextComponent} from './watson-speechtotext/watson-speechtotext.component';
 
 import {WatsonService} from './watson.service';
 import {RouterModule} from '@angular/router';
@@ -20,6 +21,7 @@ import { ChartModule } from 'angular2-chartjs';
   declarations: [
     WatsonNLPComponent,
     WatsonVisionComponent,
+    WatsonSpeechToTextComponent,
   ],
   exports: [
   ],
