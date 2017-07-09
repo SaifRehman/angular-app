@@ -9,34 +9,41 @@ import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 @Component({
-    selector: 'watson-vision-component',
-    templateUrl: './watson-vision.component.html',
-    styleUrls: ['./watson-vision.component.css']
+    selector: 'watson-nlp-component',
+    templateUrl: './watson-nlp.component.html',
+    styleUrls: ['./watson-nlp.component.css']
 })
-export class WatsonVisionComponent implements OnInit {
-link:string="";
+export class WatsonNLPComponent implements OnInit {
+    sentance: string = "";
+    private show:string = "";
     constructor(private http: Http, private watsonService: WatsonService) {
-        
+
     }
 
     ngOnInit() {
 
     }
- callWatsonVisionApi() {
-        var body = {"link":this.link};
-        console.log(this.link);
+    // this function gets called from html (button) , and it calls the wastson api on django 
+    callWatsonNlpApi() { 
+        var body = {"data":this.sentance};
         var headers = new Headers();
         headers.append('Content-Type', 'application/json');
-        headers.append('Authorization', 'JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlVzZXIxIiwidXNlcl9pZCI6NSwiZW1haWwiOiJVc2VyMUBlbWFpbC5jb20iLCJleHAiOjE1MjU0NzE1NTZ9.zaryPzeRb-oDk-Q-osCwf4Mxd0dIV1QOQO_Ys_SCBek');
+        headers.append('Authorization', 'JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFyZWVqMTIzIiwidXNlcl9pZCI6MywiZW1haWwiOiJhcmVlakBjb20iLCJleHAiOjE1MjUzNjc3NTl9.JDuQ-zZid5FzDW4_Z2liv2JUhvocK0UDwBlNVae2z94');
         this.http
-            .post('http://127.0.0.1:8000/api/watsonV',
+            .post('http://127.0.0.1:8000/api/watson/',
             body, {
                 headers: headers
             })
             .subscribe(data => {
                 console.log(data.json());
+                var temp = data.json();
+                this.show = temp["Succes"]["keywords"][0]["sentiment"]["score"]
+                console.log(this.show);
             }, error => {
                 console.log(JSON.stringify(error.json()));
                 alert("not ok")
             });
- }}
+    }
+
+}
+
