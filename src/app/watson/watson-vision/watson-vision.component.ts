@@ -29,7 +29,7 @@ link:string="";
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', 'JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlVzZXIxIiwidXNlcl9pZCI6NSwiZW1haWwiOiJVc2VyMUBlbWFpbC5jb20iLCJleHAiOjE1MjU0NzE1NTZ9.zaryPzeRb-oDk-Q-osCwf4Mxd0dIV1QOQO_Ys_SCBek');
         this.http
-            .post('http://127.0.0.1:8000/api/watsonV',
+            .post('http://127.0.0.1:8000/api/watsonV/',
             body, {
                 headers: headers
             })

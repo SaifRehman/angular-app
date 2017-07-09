@@ -25,7 +25,7 @@ Tone:string="";
 
     }
   callWatsonToneAnalyzerApi() { 
-    var body = {"data":this.Tone};
+    var body = {"Tone":this.Tone};
         var headers = new Headers();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', 'JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IlVzZXIxIiwidXNlcl9pZCI6NSwiZW1haWwiOiJVc2VyMUBlbWFpbC5jb20iLCJleHAiOjE1MjU0NzE1NTZ9.zaryPzeRb-oDk-Q-osCwf4Mxd0dIV1QOQO_Ys_SCBek');
@@ -34,13 +34,11 @@ Tone:string="";
             body, {
                 headers: headers
             })
-            error => {
+            .subscribe(data => {
+                console.log(data.json());
+            }, error => {
                 console.log(JSON.stringify(error.json()));
                 alert("not ok")
-            };
+            });
     }
-
-    
-
 }
-
