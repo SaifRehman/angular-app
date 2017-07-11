@@ -5,5 +5,6 @@ export const ROUTES: RouteInfo[] = [
      { path: '/watson/nlp', title: 'NLP', icon: 'material-icons' },
      { path: '/watson/vision', title: 'Vision', icon: 'material-icons' },
      { path: '/watson/speechtotext', title: 'SpeechToText', icon: 'material-icons' },
+     { path: '/watson/PI', title: 'PI', icon: 'material-icons' },
 
 ];

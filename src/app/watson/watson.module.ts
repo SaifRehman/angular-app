@@ -3,6 +3,8 @@ import {CommonModule} from '@angular/common';
 import {WatsonNLPComponent} from './watson-nlp/watson-nlp.component';
 import {WatsonVisionComponent} from './watson-vision/watson-vision.component';
 import {WatsonSpeechToTextComponent} from './watson-speechtotext/watson-speechtotext.component';
+import {PI} from './watson-PI/watson-PI.component';
+
 
 import {WatsonService} from './watson.service';
 import {RouterModule} from '@angular/router';
@@ -22,6 +24,8 @@ import { ChartModule } from 'angular2-chartjs';
     WatsonNLPComponent,
     WatsonVisionComponent,
     WatsonSpeechToTextComponent,
+    PI,
+
   ],
   exports: [
   ],
